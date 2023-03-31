@@ -36,18 +36,23 @@ To compile this code, run the following command:
     >> print: executed when the opcode is 0, prints the value held in the 0th register.
         Example: CPU step(0, 0, 0, 0, cpu ptr)
                 should print a 0 to the console.
+    
     >> put: executed when the opcode is 1. This instruction treats arg2 and arg3 as a single immediate, and places its value in the register indicated by arg1 (it sets reg[arg1] = x, where x is a 32-bit integer formed by concatenating 16 zeros followed by the bits of arg2 and arg3).
         Example: CPU_step(1,0,1,1, cpu_ptr);
             puts 0b00000001 00000001 = 257 into r0
+   
     >> add: executed when the opcode is 2. Takes the values in the registers indicated by arg2 and arg3, adds them, and places their sum into the register indicated by arg1.
         Example: CPU_step(2,0,1,2, cpu_ptr);
             computes r0 = r1 + r2
+   
     >> multiply: executed when the opcode is 5. It does the same thing as add but with multiplication.
         Example: CPU_step(5,0,0,1, cpu_ptr);
             computes r0 = r0 * r1
+   
     >> store: executed when the opcode is 3. It takes the value in the register indicated by arg1, and places it in the ith place in RAM, where i is the value stored in the register indicated by arg2.
         Example: CPU_step(3,1,2,0, cpu_ptr);    
             stores the value at r1 into ram[value at r2].
+   
     >> load: executed when the opcode is 4. It takes the value stored in the ith place in RAM, where i is the value stored in the register indicated by arg2, and places it in the register indicated by arg1.
         Example: CPU_step(4,0,2,0, cpu_ptr);
             loads the value from ram[value at r2] into r0.
