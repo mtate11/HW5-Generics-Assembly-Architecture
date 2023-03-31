@@ -8,10 +8,13 @@ To compile this code, run the following command:
 - **WHERE**: code for maximum(), CmpInt(), CmpFloat(), and maximum_v2() is in hw5.c and hw5.h
 - **HOW**: 
     >> a. Run maximum() inputing a base address of an array (as a void*), the size (in bytes) of an element of the array, and the number of elements in the array. It returns a void* that points to the maximum value in the array (in terms of lexicographical order of the binary representation)
+    
     >> b. Run CmpInt() by inputing two void*s, a_ptr and b_ptr. It interprets the values at those addresses as ints (call them a and
     b), and returns −1 if a < b, 0 if a == b, and 1 if a > b.
+    
     >> c. Run CmpFloat() by inputing two void*s, a_ptr and b_ptr. It does the same as CmpInt() but for floats.
-    >> d. Run maximum_v2() by inputing the same arguments as maximum(), plus a pointer to a comparison function (with prototype int (* cmpfn) (void*, void*) ). It returns a void* that points to the maximum value in the array (in terms of the order determined by the comparison function).
+   
+   >> d. Run maximum_v2() by inputing the same arguments as maximum(), plus a pointer to a comparison function (with prototype int (* cmpfn) (void*, void*) ). It returns a void* that points to the maximum value in the array (in terms of the order determined by the comparison function).
 - **NOTES**: maximum() only works for positive whole integers since memcmp() looks at the left most bit to determine if one number it larger than the other and doen't consider sign nor floating-point notation (since comparison is done lexicographically).
 
 ### 2. MIPS Assembly Basics
