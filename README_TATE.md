@@ -26,7 +26,9 @@ To compile this code, run the following command:
 - **WHERE**: code for struct sCPU is in hw5.h. Code for CPU_init() and CPU_destroy() is in hw5.h and hw5.c.
 - **HOW**: 
     >> Create a sCPU simiply by calling sCPU <name> (since sCPU is a typedef struct named sCPU). struct sCPU's have a register set 'reg' and a 32-kilobyte memory 'ram'. reg is represented by an array of thirty two 32-bit signed integers and ram is represented by an array of 1024 32-bit signed integers.
+    
     >> Run by setting, sCPU <name> = CPU_init(). This allocates <name> as a new sCPU on the heap, puts zeros in all of the slots in the registers and RAM.
+    
     >> Run CPU_destroy() by inputing a pointer to a (heap-allocated) sCPU, via <name>. This function frees it.
 - **NOTES**: 
 
